@@ -1,5 +1,5 @@
 <nav>
-  <div>
+  <div class="logo">
     <svg
       width="182"
       height="61"
@@ -107,47 +107,44 @@
   </div>
 
   <div class="selector-box">
-    <div class="selector"></div>
-    <div class="menu-ul">
-      <ul>
-        <li>
-          <span>
-            <img src="/assets/icons/home-icon.svg" alt="" srcset="" />
-            Home
-          </span>
-        </li>
-        <li>
-          <span>
-            <img src="/assets/icons/connections.svg" alt="" srcset="" />
-            Minhas conexões
-          </span>
-        </li>
-        <li>
-          <span>
-            <img src="/assets/icons/request-sent.svg" alt="" srcset="" />
-            Solicitações enviadas
-          </span>
-        </li>
+    <ul>
+      <li>
+        <span class="btn" (click)="log($event.target)">
+          <img src="/assets/icons/home-icon.svg" alt="" srcset="" />
+          Home
+        </span>
+      </li>
+      <li>
+        <span class="btn" (click)="log($event.target)">
+          <img src="/assets/icons/connections.svg" alt="" srcset="" />
+          Minhas conexões
+        </span>
+      </li>
+      <li>
+        <span class="btn" (click)="log($event.target)">
+          <img src="/assets/icons/request-sent.svg" alt="" srcset="" />
+          Solicitações enviadas
+        </span>
+      </li>
 
-        <li>
-          <span>
-            <img src="/assets/icons/request-received.svg" alt="" srcset="" />
-            Solicitaçoes recebidas
-          </span>
-        </li>
-        <li>
-          <span>
-            <img src="/assets/icons/profile-blocked.svg" alt="" srcset="" />
-            Perfis bloqueados
-          </span>
-        </li>
-        <li>
-          <span>
-            <img src="/assets/icons/logout.svg" alt="" srcset="" />
-            Logout
-          </span>
-        </li>
-      </ul>
-    </div>
+      <li>
+        <span class="btn" (click)="log($event.target)">
+          <img src="/assets/icons/request-received.svg" alt="" srcset="" />
+          Solicitaçoes recebidas
+        </span>
+      </li>
+      <li>
+        <span class="btn" (click)="log($event.target)">
+          <img src="/assets/icons/profile-blocked.svg" alt="" srcset="" />
+          Perfis bloqueados
+        </span>
+      </li>
+      <li>
+        <span class="btn" (click)="log($event.target)">
+          <img src="/assets/icons/logout.svg" alt="" srcset="" />
+          Logout
+        </span>
+      </li>
+    </ul>
   </div>
 </nav>
