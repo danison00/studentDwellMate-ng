@@ -109,13 +109,22 @@
   <div class="selector-box">
     <ul>
       <li>
-        <span class="btn" (click)="log($event.target)">
+        <span
+          class="btn"
+          (click)="log($event.target)"
+          style="background-color: #2b2e44"
+          [routerLink]="['home']"
+        >
           <img src="/assets/icons/home-icon.svg" alt="" srcset="" />
           Home
         </span>
       </li>
       <li>
-        <span class="btn" (click)="log($event.target)">
+        <span
+          class="btn"
+          (click)="log($event.target)"
+          [routerLink]="['connections']"
+        >
           <img src="/assets/icons/connections.svg" alt="" srcset="" />
           Minhas conexões
         </span>
@@ -139,7 +148,7 @@
           Perfis bloqueados
         </span>
       </li>
-      <li>
+      <li [routerLink]="['/','login']">
         <span class="btn" (click)="log($event.target)">
           <img src="/assets/icons/logout.svg" alt="" srcset="" />
           Logout
