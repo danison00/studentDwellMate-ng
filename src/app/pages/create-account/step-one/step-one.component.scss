@@ -1,0 +1,22 @@
+.step-one {
+  width: 300px;
+  height: 300px;
+}
+div.password {
+  position: relative;
+}
+
+img.eyes-open,
+img.eyes-close {
+  position: absolute;
+  top: 40px;
+  right: 8px;
+  cursor: pointer;
+}
+.btn-next{
+    padding-top: 1.5rem;
+}
+h3{
+    margin: .3rem 0 1rem 0;
+    color: #393d4d;
+}

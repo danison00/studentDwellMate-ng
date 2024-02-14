@@ -5,6 +5,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ConnectionsComponent } from './home-contents/connections/connections.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
+import { StepOneComponent } from './pages/create-account/step-one/step-one.component';
+import { StepTwoComponent } from './pages/create-account/step-two/step-two.component';
 
 const routes: Routes = [
   {
@@ -19,11 +21,19 @@ const routes: Routes = [
         path: 'connections',
         component: ConnectionsComponent,
       },
-      {path:'**', redirectTo: 'profiles'}
+      { path: '**', redirectTo: 'profiles' },
     ],
   },
   { path: 'login', component: LoginComponent },
-  {path: 'create-account', component: CreateAccountComponent},
+  {
+    path: 'create-account',
+    component: CreateAccountComponent,
+    children: [
+      { path: 'step-1', component: StepOneComponent },
+      { path: 'step-2', component: StepTwoComponent },
+      {path: '**', redirectTo: 'step-1'}
+    ],
+  },
   { path: '**', redirectTo: 'home' },
 ];
 

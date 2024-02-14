@@ -1,22 +1,41 @@
 <div class="page">
-    <div class="box">
-      <div class="box-text">
-        <img src="/assets/icons/logo.svg" alt="" />
-        <div class="text-btn">
-          <div class="text">
-            <h2>Seja bem vindo!</h2>
-            <p>Caso já possua conta, faça seu login!</p>
-          </div>
-          <div>
-            <app-button bg_color="white" text="Login" [routerLink]="['/login']"/>
-          </div>
+  <main>
+    <div class="box-left">
+      <img src="/assets/icons/logo.svg" alt="" />
+      <div class="box-text-btn">
+        <div class="text">
+          <h2>Seja bem vindo!</h2>
+          <p>Caso já possua conta, faça seu login!</p>
+        </div>
+        <div>
+          <app-button bg_color="white" text="Login" [routerLink]="['/login']" />
         </div>
       </div>
-      <div class="box-form">
-        <form action="#">
-         
-        </form>
-      </div>
     </div>
-  </div>
-  
+
+    <div class="box-form">
+      <form action="#">
+        <h2>Nova conta</h2>
+
+        <router-outlet ></router-outlet>
+        <!-- <app-step-one [formLogin]="formLogin"></app-step-one> -->
+
+        <!-- <app-step-two [formUserData]="formUserData"></app-step-two> -->
+
+        <!-- <div style="background-color: aqua;" class="box-btn-send">
+          <app-button
+            *ngIf="step == 1"
+            class="btn-send"
+            text="Próximo"
+            (click)="nextStep()"
+          ></app-button>
+          <app-button
+            *ngIf="step == 2"
+            class="btn-send"
+            text="Criar"
+          ></app-button>
+        </div> -->
+      </form>
+    </div>
+  </main>
+</div>

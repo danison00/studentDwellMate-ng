@@ -10,7 +10,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { ConnectionsComponent } from './home-contents/connections/connections.component';
 import { ButtonComponent } from './components/button/button.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StepOneComponent } from './pages/create-account/step-one/step-one.component';
+import { StepTwoComponent } from './pages/create-account/step-two/step-two.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     ConnectionsComponent,
     ButtonComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    StepOneComponent,
+    StepTwoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
