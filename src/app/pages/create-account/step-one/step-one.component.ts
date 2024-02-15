@@ -18,8 +18,10 @@ export class StepOneComponent implements OnInit {
 
   ngOnInit(): void {
     this.formLogin = this.cAcc.getForm().get('login') as FormGroup;
+    
   }
   nextStep() {
+    
     this.submited = true;
     if(this.formLogin.invalid) return;
     this.router.navigate(['create-account', 'step-2']);
@@ -28,6 +30,7 @@ export class StepOneComponent implements OnInit {
   }
 
   toogleViewPassword() {
+   
     this.viewPassword = !this.viewPassword;
   }
 

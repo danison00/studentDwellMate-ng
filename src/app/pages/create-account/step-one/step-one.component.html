@@ -1,4 +1,4 @@
-<div [formGroup]="formLogin" #form="ngForm">
+<div [formGroup]="formLogin" #form="ngForm" class="container">
   <h3>Escolha seu login</h3>
   <div class="col">
     <label for="username">Usuário</label>
@@ -37,7 +37,7 @@
     />
   </div>
   <div class="col password">
-    <label for="password">Confirmar senha</label>
+    <label for="confirm-password">Confirmar senha</label>
     <input
       [type]="viewPassword ? 'text' : 'password'"
       id="confirm-password"

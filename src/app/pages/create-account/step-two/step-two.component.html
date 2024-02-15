@@ -1,6 +1,7 @@
-<div class="row gap-1 inputs step-two" id="step-two">
-  
-    <div class="col-1">
+<h3>Dados pessoais</h3>
+
+<div class="row container">
+  <div class="col-1">
     <div class="row">
       <div class="col">
         <label for="photo">Link de sua foto</label>
@@ -60,17 +61,19 @@
         <input type="text" id="facebook" />
       </div>
     </div>
+
     <div class="row spc-btw">
       <span>Deseja compartilhar imóvel atualmente?</span>
-      <div class="btn-case">
+      <div class="box-btn">
+        <input type="checkbox" id="check" />
         <label
-          class="box-btn"
-          (click)="markBtn()"
+          class="btn-sliders-case"
+          (click)="checkToogle()"
           [ngClass]="{ 'box-btn-on': btnRigth }"
           for="check"
         >
           <div
-            class="btn btn-left"
+            class="btn-sliders btn-left"
             id="btn"
             [ngClass]="{ 'btn-rigth': btnRigth }"
           ></div>
