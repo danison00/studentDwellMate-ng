@@ -10,7 +10,7 @@
   scroll-behavior: smooth;
 }
 body {
-  height: 100svh;
+  min-height: 100svh;
   width: 100dvw;
   display: flex;
 }

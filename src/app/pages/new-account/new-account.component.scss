@@ -1,0 +1,36 @@
+:host {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*{ 
+  color: #22222ef3
+}
+h2,
+p,
+span {
+  color: #eae9f7f3;
+  font-family: "Rokkitt", serif;
+  font-weight: 400;
+}
+main {
+  margin: 3rem 2rem;
+  height: auto;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: #a0a9cf73 10px 10px 20px;
+}
+
+
+form h2{
+    color: #22222ef3;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 500px) {
+  main {
+    margin: 2rem 1rem;
+  }
+}

@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+}
+
+h3 {
+  color: #22222ef3;
+}
+div.password {
+  position: relative;
+}
+
+img.eyes-open,
+img.eyes-close {
+  position: absolute;
+  top: 40px;
+  right: 8px;
+  cursor: pointer;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3rem 4rem;
+  .btn-next {
+    margin-top: 1rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .container {
+    padding: 1.5rem 2rem;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .box-left {
+    display: none;
+  }
+  .container{
+    border-radius: 10px;
+    border: 1px solid #a8a8af42;
+  }
+}

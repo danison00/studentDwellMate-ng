@@ -13,6 +13,10 @@ import { CreateAccountComponent } from './pages/create-account/create-account.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StepOneComponent } from './pages/create-account/step-one/step-one.component';
 import { StepTwoComponent } from './pages/create-account/step-two/step-two.component';
+import { NewAccountComponent } from './pages/new-account/new-account.component';
+import { Step1Component } from './pages/new-account/step-1/step-1.component';
+import { Step2Component } from './pages/new-account/step-2/step-2.component';
+import { BoxLeftComponent } from './pages/new-account/box-left/box-left.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { StepTwoComponent } from './pages/create-account/step-two/step-two.compo
     ButtonComponent,
     CreateAccountComponent,
     StepOneComponent,
-    StepTwoComponent
+    StepTwoComponent,
+    NewAccountComponent,
+    Step1Component,
+    Step2Component,
+    BoxLeftComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,39 @@
+:host{
+  
+    height: auto;
+}
+
+.box-left {
+  background-color: #495794;
+  height: 100%;
+  min-width: 15rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 1.8rem;
+  .box-text-btn {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .text {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.04rem;
+    }
+  }
+}
+h2,
+p,
+span {
+  color: #eae9f7f3;
+  font-family: "Rokkitt", serif;
+  font-weight: 400;
+}

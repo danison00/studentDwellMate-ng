@@ -1,5 +1,6 @@
 * {
   transition: 0.2s;
+  color: #393d4d;
 }
 .page {
   background-color: #676c8f2a;
@@ -10,7 +11,7 @@
   align-items: center;
 }
 main {
-  min-width: 700px;
+  width: auto;
   height: auto;
   display: flex;
   border-radius: 10px;
@@ -52,7 +53,8 @@ main {
 }
 
 .box-form {
-  min-width: 25rem;
+  width: auto;
+  height: auto;
   background-color: #ffffffa8;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;

@@ -1,0 +1,91 @@
+<app-box-left class="box-left"></app-box-left>
+<div class="main">
+  <h2>Nova conta</h2>
+  <h3>Dados pessoais</h3>
+  <div class="row container">
+    <div class="col-1">
+      <div class="row">
+        <div class="col">
+          <label for="photo">Link de sua foto</label>
+          <input type="text" id="photo" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col nome">
+          <label for="name">Nome</label>
+          <input type="text" id="name" />
+        </div>
+        <div class="col idade">
+          <label for="age">Idade</label>
+          <input type="number" id="age" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="faculty">Faculdade</label>
+          <input type="text" id="faculty" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="course">Curso</label>
+          <input type="text" id="course" />
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="row grid-2">
+        <div class="col">
+          <label for="cidade-atual">Cidade Atual</label>
+          <input type="text" id="cidade-atual" />
+        </div>
+        <div class="col">
+          <label for="cidade-origem">Cidade de origem</label>
+          <input type="text" id="cidade-origem" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="email">Email</label>
+          <input type="text" id="email" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="instagram">Instagram</label>
+          <input type="text" id="instagram" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="facebook">Facebook</label>
+          <input type="text" id="facebook" />
+        </div>
+      </div>
+
+      <div class="row spc-btw">
+        <span>Deseja compartilhar imóvel atualmente?</span>
+        <div class="box-btn-slider" (click)="checkToogle()">
+          <input type="checkbox" id="check" />
+          <label
+            class="btn-sliders-case"
+            [ngClass]="{ 'box-btn-on': btnRigth }"
+            for="check"
+          >
+            <div
+              class="btn-sliders btn-left"
+              id="btn"
+              (click)="checkToogle()"
+              [ngClass]="{ 'btn-rigth': btnRigth }"
+            ></div>
+          </label>
+        </div>
+        
+      </div>
+    <div class="box-btn-send">
+      <app-button style="display: block; width: 40%;" text="Criar conta"></app-button>
+    </div>
+    </div>
+  </div>
+</div>
