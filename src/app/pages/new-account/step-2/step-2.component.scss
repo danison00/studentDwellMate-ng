@@ -1,8 +1,12 @@
 :host {
   display: flex;
 }
+*{
+  transition: .2s;
+}
 .main {
   padding: 2rem 3rem;
+ max-width: 1000px;
 }
 h3 {
   margin-top: 0.7rem;
@@ -73,6 +77,7 @@ input,
 }
 
 .box-btn-send {
+  margin-top: 2.5rem;
   display: flex;
   justify-content: flex-end;
 }

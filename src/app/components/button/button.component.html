@@ -1,1 +1,7 @@
-<button [attr.bg-color] = bg_color>{{text}}</button>
+<button [attr.bg-color] = bg_color (click)="onLoad()">
+   <p *ngIf="!load">
+    {{text}}
+   </p> 
+
+    <app-spinner *ngIf="load"></app-spinner>
+</button>

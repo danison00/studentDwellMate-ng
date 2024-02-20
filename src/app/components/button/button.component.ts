@@ -8,5 +8,13 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
 
   @Input() text = "Button";
+  @Input() clickLoad = false;
   @Input() bg_color: "dark-blue" | "ligth-blue" | "green" | "white" = "ligth-blue";
+
+  @Input() load = false;
+
+  onLoad(){
+    if(!this.clickLoad) return;
+    this.load = true;
+  }
 }

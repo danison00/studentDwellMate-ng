@@ -12,7 +12,9 @@
       formControlName="username"
       [ngClass]="{ invalid: formLogin.get('username')?.invalid && submited }"
       (input)="submited = false"
+      (input)="usernameUnavailable = false"
     />
+    <p *ngIf="usernameUnavailable" style="color: red; font-size: .8rem;">Username indisponível</p>
   </div>
   <div class="col password">
     <label for="password">Senha</label>
@@ -21,7 +23,7 @@
       id="password"
       formControlName="password"
       [ngClass]="{ invalid: formLogin.get('password')?.invalid && submited }"
-      (input)="submited = false"
+      (input)="submited = false; passwordNonMate =false"
     />
     <img
       *ngIf="!viewPassword"
@@ -49,8 +51,10 @@
       [ngClass]="{
         invalid: formLogin.get('confirmPassword')?.invalid && submited
       }"
-      (input)="submited = false"
+      (input)="submited = false; passwordNonMate =false"
+
     />
+
     <img
       *ngIf="!viewPassword"
       class="eyes-open"
@@ -58,6 +62,7 @@
       src="/assets/icons/eyes_open.svg"
       alt=""
       (click)="toogleViewPassword()"
+      (input)="passwordNonMate =false"
     />
     <img
       *ngIf="viewPassword"
@@ -66,9 +71,12 @@
       src="/assets/icons/eyes_close.svg"
       alt=""
       (click)="toogleViewPassword()"
+      (input)="passwordNonMate =false"
+
     />
+    <p *ngIf="passwordNonMate"  style="font-size: .8rem; color: red;">senhas não conferem</p>
   </div>
   <div class="btn-next">
-    <app-button text="Avançar" (click)="nextStep()"></app-button>
+    <app-button text="Avançar" (click)="nextStep()" [load]="waitResponseRequest"></app-button>
   </div>
 </div>

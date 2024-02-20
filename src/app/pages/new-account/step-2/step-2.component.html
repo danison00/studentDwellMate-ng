@@ -2,34 +2,74 @@
 <div class="main">
   <h2>Nova conta</h2>
   <h3>Dados pessoais</h3>
-  <div class="row container">
+  <div class="row container" [formGroup]="formUserData" #form="ngForm">
     <div class="col-1">
       <div class="row">
         <div class="col">
           <label for="photo">Link de sua foto</label>
-          <input type="text" id="photo" />
+          <input
+            type="text"
+            id="photo"
+            formControlName="linkPhoto"
+            [ngClass]="{
+              invalid: formSubmited && formUserData.get('linkPhoto')?.invalid
+            }"
+            (input)="formUserData.get('linkPhoto')?.markAsTouched"
+          />
         </div>
       </div>
       <div class="row">
         <div class="col nome">
           <label for="name">Nome</label>
-          <input type="text" id="name" />
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            [ngClass]="{
+              invalid: formSubmited && formUserData.get('name')?.invalid
+            }"
+            (input)="formUserData.get('name')?.markAsTouched"
+          />
         </div>
         <div class="col idade">
           <label for="age">Idade</label>
-          <input type="number" id="age" />
+          <input
+            type="number"
+            id="age"
+            formControlName="age"
+            [ngClass]="{
+              invalid: formSubmited && formUserData.get('age')?.invalid
+            }"
+            (input)="formUserData.get('age')?.markAsTouched"
+          />
         </div>
       </div>
       <div class="row">
         <div class="col">
           <label for="faculty">Faculdade</label>
-          <input type="text" id="faculty" />
+          <input
+            type="text"
+            id="faculty"
+            formControlName="faculty"
+            [ngClass]="{
+              invalid: formSubmited && formUserData.get('faculty')?.invalid
+            }"
+            (input)="formUserData.get('faculty')?.markAsTouched"
+          />
         </div>
       </div>
       <div class="row">
         <div class="col">
           <label for="course">Curso</label>
-          <input type="text" id="course" />
+          <input
+            type="text"
+            id="course"
+            formControlName="course"
+            [ngClass]="{
+              invalid: formSubmited && formUserData.get('course')?.invalid
+            }"
+            (input)="formUserData.get('course')?.markAsTouched"
+          />
         </div>
       </div>
     </div>
@@ -37,37 +77,75 @@
       <div class="row grid-2">
         <div class="col">
           <label for="cidade-atual">Cidade Atual</label>
-          <input type="text" id="cidade-atual" />
+          <input
+            type="text"
+            id="cidade-atual"
+            formControlName="cityCurrent"
+            [ngClass]="{
+              invalid: formSubmited && formUserData.get('cityCurrent')?.invalid
+            }"
+            (input)="formUserData.get('cityCurrent')?.markAsTouched"
+          />
         </div>
         <div class="col">
           <label for="cidade-origem">Cidade de origem</label>
-          <input type="text" id="cidade-origem" />
+          <input
+            type="text"
+            id="cidade-origem"
+            formControlName="cityOrigin"
+            [ngClass]="{
+              invalid: formSubmited && formUserData.get('cityOrigin')?.invalid
+            }"
+            (input)="formUserData.get('cityOrigin')?.markAsTouched"
+          />
         </div>
       </div>
       <div class="row">
         <div class="col">
           <label for="email">Email</label>
-          <input type="text" id="email" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <label for="instagram">Instagram</label>
-          <input type="text" id="instagram" />
+          <input
+            type="text"
+            id="email"
+            formControlName="email"
+            [ngClass]="{
+              invalid: formSubmited && formUserData.get('email')?.invalid
+            }"
+            (input)="formUserData.get('email')?.markAsTouched; emailExists = false;"
+          />
+          <p *ngIf="emailExists" style="color: red; font-size: .8rem;">Email já em uso</p>
         </div>
       </div>
 
       <div class="row">
         <div class="col">
+          <label for="instagram">Instagram</label>
+          <input type="text" id="instagram" formControlName="instagram" />
+        </div>
+
+        <div class="col">
           <label for="facebook">Facebook</label>
-          <input type="text" id="facebook" />
+          <input type="text" id="facebook" formControlName="facebook" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="whatsapp">Whatsapp</label>
+          <input
+            type="text"
+            id="whatsapp"
+            formControlName="whatsapp"
+            [ngClass]="{
+              invalid: formSubmited && formUserData.get('whatsapp')?.invalid
+            }"
+            (input)="formUserData.get('whatsapp')?.markAsTouched"
+          />
         </div>
       </div>
 
       <div class="row spc-btw">
         <span>Deseja compartilhar imóvel atualmente?</span>
         <div class="box-btn-slider" (click)="checkToogle()">
-          <input type="checkbox" id="check" />
+          <input type="checkbox" id="check" formControlName="wantShare" />
           <label
             class="btn-sliders-case"
             [ngClass]="{ 'box-btn-on': btnRigth }"
@@ -81,11 +159,14 @@
             ></div>
           </label>
         </div>
-        
       </div>
-    <div class="box-btn-send">
-      <app-button style="display: block; width: 40%;" text="Criar conta"></app-button>
-    </div>
+      <div class="box-btn-send">
+        <app-button
+          style="display: block; width: 40%"
+          text="Criar conta"
+          (click)="validateFormNsend()"
+        ></app-button>
+      </div>
     </div>
   </div>
 </div>

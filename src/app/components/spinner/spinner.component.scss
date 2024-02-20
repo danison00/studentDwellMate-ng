@@ -1,0 +1,34 @@
+:host {
+  width: 99%;
+  height: 99%;
+}
+
+.box {
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 999;
+  width: 99%;
+  height: 99%;
+}
+
+.spinner {
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 50%;
+  border: .3rem solid rgb(14, 56, 170);
+  border-right: .3rem solid transparent;
+  animation: loading 1s linear infinite;
+  
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

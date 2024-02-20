@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StepTwoComponent } from './step-two.component';
+import { SpinnerComponent } from './spinner.component';
 
-describe('StepTwoComponent', () => {
-  let component: StepTwoComponent;
-  let fixture: ComponentFixture<StepTwoComponent>;
+describe('SpinnerComponent', () => {
+  let component: SpinnerComponent;
+  let fixture: ComponentFixture<SpinnerComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [StepTwoComponent]
+      declarations: [SpinnerComponent]
     });
-    fixture = TestBed.createComponent(StepTwoComponent);
+    fixture = TestBed.createComponent(SpinnerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

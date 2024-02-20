@@ -19,15 +19,31 @@
     <div class="box-form">
       <img src="/assets/icons/logo-dark.svg" alt="" class="logo" />
 
-      <form  #form="ngForm" [formGroup]="formLogin">
+      <form #form="ngForm" [formGroup]="formLogin">
         <h2>Login</h2>
         <div class="col">
           <label for="username">Usuário</label>
-          <input type="text" id="username" formControlName="username" [ngClass]="{'invalid': formLogin.get('username')?.invalid && form.submitted}" />
+          <input
+            type="text"
+            id="username"
+            formControlName="username"
+            [ngClass]="{
+              invalid: formLogin.get('username')?.invalid && form.submitted
+            }"
+            (input)="usernameOrPasswordInvalid = false"
+          />
         </div>
         <div class="col password">
           <label for="password">Senha</label>
-          <input [type]="viewPassword ? 'text' : 'password'" id="password" formControlName="password" [ngClass]="{'invalid': formLogin.get('password')?.invalid && form.submitted}" />
+          <input
+            [type]="viewPassword ? 'text' : 'password'"
+            id="password"
+            formControlName="password"
+            [ngClass]="{
+              invalid: formLogin.get('password')?.invalid && form.submitted
+            }"
+            (input)="usernameOrPasswordInvalid = false"
+          />
           <img
             *ngIf="!viewPassword"
             class="eyes-open"
@@ -45,14 +61,31 @@
             (click)="open()"
           />
         </div>
+        <p
+          *ngIf="usernameOrPasswordInvalid"
+          style="color: rgba(255, 0, 0, 0.801); font-size: 0.8rem"
+        >
+          Usuario ou senha inválidos
+        </p>
+
         <div class="box-btn">
-          <app-button text="Login" (click)="login()"></app-button>
+          <app-button
+            text="Login"
+            (click)="login()"
+            [load]="waitResponserequest"
+          ></app-button>
           <h5>ou</h5>
-          <app-button bg_color="dark-blue" text="Google"></app-button>
+          <app-button
+            [clickLoad]="true"
+            bg_color="dark-blue"
+            text="Google"
+          ></app-button>
         </div>
       </form>
 
-      <p>Não possui uma conta? <a [routerLink]="['/new-account']">Crie agora.</a></p>
+      <p class="new-account-link">
+        Não possui uma conta? <a [routerLink]="['/new-account']">Crie agora.</a>
+      </p>
     </div>
   </div>
 </div>
