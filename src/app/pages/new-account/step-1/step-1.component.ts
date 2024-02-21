@@ -27,7 +27,8 @@ export class Step1Component implements OnInit, OnDestroy {
     private profileServ: ProfileService
   ) {}
   ngOnDestroy(): void {
-    this.usernameExistsSubscription$.unsubscribe();
+    if (this.usernameExistsSubscription$)
+      this.usernameExistsSubscription$.unsubscribe();
   }
 
   ngOnInit(): void {
@@ -44,7 +45,14 @@ export class Step1Component implements OnInit, OnDestroy {
     }
 
     this.waitResponseRequest = true;
+    this.checkUsernameExists();
+  }
 
+  toogleViewPassword() {
+    this.viewPassword = !this.viewPassword;
+  }
+
+  public async checkUsernameExists() {
     this.usernameExistsSubscription$ = this.profileServ
       .usernameExists(this.formLogin.value.username)
       .subscribe({
@@ -62,9 +70,5 @@ export class Step1Component implements OnInit, OnDestroy {
           this.waitResponseRequest = false;
         },
       });
-  }
-
-  toogleViewPassword() {
-    this.viewPassword = !this.viewPassword;
   }
 }

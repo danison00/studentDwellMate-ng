@@ -10,22 +10,11 @@ export class ProfileService {
   constructor(private http: HttpClient) {}
 
   public newProfile(dataAccount: DataAccount) {
-    return this.http
-      .post(
-        'http://localhost:8080/api/public/profile/new-profile',
-        dataAccount,
-        { observe: 'response' }
-      )
-      .pipe(
-        map((response: HttpResponse<any>) => {
-          console.log('ok');
-
-          return true;
-        }),
-        catchError((error) => {
-          return of(false);
-        })
-      );
+    return this.http.post(
+      'http://localhost:8080/api/public/profile/new-profile',
+      dataAccount,
+      { observe: 'response' }
+    );
   }
 
   public usernameExists(username: string) {

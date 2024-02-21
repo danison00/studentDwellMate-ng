@@ -3,7 +3,6 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnDestroy,
   OnInit,
   Output,
 } from '@angular/core';
@@ -15,31 +14,29 @@ import { NewAccountComponent } from '../new-account.component';
   templateUrl: './step-2.component.html',
   styleUrls: ['./step-2.component.scss'],
 })
-export class Step2Component implements OnInit, OnDestroy {
+export class Step2Component implements OnInit {
   @Input() formUserData!: FormGroup;
   @Output() sendFormEvent = new EventEmitter<void>();
 
   protected btnRigth = false;
   protected formSubmited = false;
   protected emailExists = false;
-
+  protected waitResponseServ!: boolean;
+  private waitEmailCheck = false;
   constructor(
-    private cAcc: NewAccountComponent,
+    protected cAcc: NewAccountComponent,
     private router: Router,
     private profileServ: ProfileService
   ) {}
-  ngOnDestroy(): void {
-  }
 
   ngOnInit(): void {
     this.formUserData = this.cAcc.getForm().get('userData') as FormGroup;
     if (this.cAcc.getForm().get('login')?.invalid)
-      this.router.navigate(['create-account', 'step-1']);
+      this.router.navigate(['new-account', 'step-1']);
   }
 
   checkToogle() {
     this.btnRigth = !this.btnRigth;
-    console.log();
   }
 
   validateFormNsend() {
@@ -50,6 +47,8 @@ export class Step2Component implements OnInit, OnDestroy {
       this.formUserData.get('instagram')?.value == null
     )
       return alert('Adicione pelo menos uma rede social');
+    if (this.waitEmailCheck) return;
+    this.waitEmailCheck = true;
 
     this.profileServ.emailExists(this.formUserData.value.email).subscribe({
       next: (resp: any) => {
@@ -58,7 +57,11 @@ export class Step2Component implements OnInit, OnDestroy {
         } else {
           this.cAcc.sendForm();
         }
+        this.waitEmailCheck = false;
       },
     });
+  }
+  load(): boolean {
+    return this.waitEmailCheck || this.cAcc.sendingFrom;
   }
 }

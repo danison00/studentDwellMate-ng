@@ -1,6 +1,19 @@
 <main>
+  <app-modal type="success" *ngIf="acountCreateSuccess">
+    <p
+      style="
+        font-size: 1.2rem;
+        color: rgb(39, 37, 51);
+        font-family: 'Poppins', sans-serif;
+      "
+      body
+    >
+      Sua conta foi criada com sucesso!
+    </p>
+    <app-button box-btn text="Fazer login" [routerLink]="['/login']"/>
+  </app-modal>
   <div class="box-form">
-    <form action="#">    
+    <form action="#">
       <router-outlet></router-outlet>
     </form>
   </div>

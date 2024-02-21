@@ -1,5 +1,7 @@
+import { AllProfilesComponent } from './../all-profiles/all-profiles.component';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataAccount } from 'src/app/model/DataAccount';
 import { ProfileService } from 'src/app/service/Profile.service';
 
@@ -12,16 +14,21 @@ export class NewAccountComponent {
   protected viewPassword = false;
   protected value!: any;
   protected step: number = 1;
-  protected sendingFrom = false;
+  public sendingFrom = false;
+  protected acountCreateSuccess: boolean = false;
 
   private formNewAccount!: FormGroup;
 
-  constructor(private fb: FormBuilder, private profileServ: ProfileService) {
+  constructor(
+    private fb: FormBuilder,
+    private profileServ: ProfileService,
+    private router: Router
+  ) {
     this.formNewAccount = this.fb.group({
       login: this.fb.group({
-        username: ['null', [Validators.required]],
-        password: ['null', Validators.required],
-        confirmPassword: ['null', Validators.required],
+        username: [null, [Validators.required]],
+        password: [null, Validators.required],
+        confirmPassword: [null, Validators.required],
       }),
       userData: this.fb.group({
         linkPhoto: [null, Validators.required],
@@ -31,7 +38,7 @@ export class NewAccountComponent {
         course: [null, Validators.required],
         cityCurrent: [null, Validators.required],
         cityOrigin: [null, Validators.required],
-        email: [null, Validators.required],
+        email: [null, [Validators.required, Validators.email]],
         instagram: [null],
         facebook: [null],
         whatsapp: [null, Validators.required],
@@ -73,6 +80,21 @@ export class NewAccountComponent {
     };
     this.sendingFrom = true;
 
-    this.profileServ.newProfile(dataAccount).subscribe({});
+    this.profileServ.newProfile(dataAccount).subscribe({
+      next: (resp) => {
+        this.acountCreateSuccess = true;
+        this.sendingFrom = false;
+        this.formNewAccount.reset();
+        this.formNewAccount.disable();
+      },
+      error: ()=>{
+        this.sendingFrom = false;
+        alert("Ocorreu um erro!")
+
+      }
+    });
+  }
+  navigateLogin() {
+    this.router.navigate(['/login']);
   }
 }

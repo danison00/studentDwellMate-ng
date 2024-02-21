@@ -1,0 +1,15 @@
+<section>
+  <div class="box-modal">
+    <div class="content">
+      <div class="title">
+        <h2 [attr.type]="type">{{ title }}</h2>
+      </div>
+      <div class="body">
+        <ng-content select="[body]"></ng-content>
+      </div>
+      <div class="footer">
+        <ng-content select="[box-btn]"></ng-content>
+      </div>
+    </div>
+  </div>
+</section>

@@ -16,6 +16,8 @@ import { BoxLeftComponent } from './pages/new-account/box-left/box-left.componen
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { NgxMaskDirective, provideEnvironmentNgxMask } from 'ngx-mask';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     BoxLeftComponent,
     LayoutPageComponent,
     SpinnerComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,8 +40,9 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgxMaskDirective
   ],
-  providers: [],
+  providers: [provideEnvironmentNgxMask()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
