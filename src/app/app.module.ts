@@ -18,6 +18,7 @@ import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NgxMaskDirective, provideEnvironmentNgxMask } from 'ngx-mask';
+import { CardProfileComponent } from './components/card-profile/card-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { NgxMaskDirective, provideEnvironmentNgxMask } from 'ngx-mask';
     LayoutPageComponent,
     SpinnerComponent,
     ModalComponent,
+    CardProfileComponent,
   ],
   imports: [
     BrowserModule,

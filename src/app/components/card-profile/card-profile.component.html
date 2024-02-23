@@ -1,0 +1,34 @@
+<div class="card">
+  <div>
+    <div class="img-box">
+      <img [src]="profile.profilePhotoUrl" alt="" />
+    </div>
+    <div class="name">
+      <h2>{{ profile.name }}</h2>
+      <h3>{{ profile.age }} anos</h3>
+    </div>
+  </div>
+  <div class="info-box">
+    <h4>Acadêmico de {{ profile.course }}</h4>
+    <h4>Em {{ profile.faculty }}</h4>
+    <h4>É de {{ profile.cityOrigin }}</h4>
+    <h4 *ngIf="profile.hasRentedProperty">Já possui imóvel alugado</h4>
+    <h4 *ngIf="!profile.hasRentedProperty">Ainda não possui imóvel alugado</h4>
+  </div>
+  <div class="footer-box">
+    <div>
+      <a *ngIf="profile.facebook" [href]="profile.facebook" target="_blank">
+        <img style="width: 40px" src="/assets/icons/facebook.svg" alt="" />
+      </a>
+      <a *ngIf="profile.instagram" [href]="profile.instagram" target="_blank">
+        <img
+          style="width: 40px"
+          src="/assets/icons/instagram.svg"
+          alt=""
+          srcset=""
+        />
+      </a>
+    </div>
+    <a href="">VER PERFIL</a>
+  </div>
+</div>

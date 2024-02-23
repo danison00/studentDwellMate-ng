@@ -60,7 +60,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         },
         complete: () => {
           this.waitResponserequest = false;
-          console.log('compleat');
         },
       });
   }

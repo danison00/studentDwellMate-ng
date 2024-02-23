@@ -1,3 +1,9 @@
-<p>all-profiles works!</p>
-<app-button bg_color="dark-blue"></app-button>
-<app-button [clickLoad]=true bg_color="green"></app-button>
+<section class="container">
+  <h1>Todos os perfis</h1>
+  <div class="cards">
+    <app-card-profile 
+      *ngFor="let profile of profiles"
+      [profile]="profile"
+    ></app-card-profile>
+  </div>
+</section>

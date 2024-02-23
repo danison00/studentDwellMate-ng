@@ -1,4 +1,20 @@
-<nav>
+<nav id="menu">
+  <div class="arrow" (click)="onExpandMenu()" id="arrow">
+    <svg
+      width="10"
+      height="26"
+      viewBox="0 0 10 26"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2.74751 2.09594L7.40801 11.6441C7.65302 12.1461 7.67695 12.7277 7.47399 13.2481L3.33118 23.8708"
+        stroke="#25262F"
+        stroke-width="4"
+        stroke-linecap="round"
+      />
+    </svg>
+  </div>
   <div class="logo">
     <svg
       width="182"
@@ -104,55 +120,74 @@
         />
       </g>
     </svg>
+
+    <img src="/assets/icons/logo.svg" alt="" srcset="" style="width: 40px" />
   </div>
 
-  <div class="selector-box">
+  <div  class="selector-box">
     <ul>
-      <li>
-        <span
+      <li (click)="clickBtnMenu($event.target)" title="Home">
+        <button
           class="btn"
-          (click)="log($event.target)"
           style="background-color: #2b2e44"
           [routerLink]="['home']"
         >
           <img src="/assets/icons/home-icon.svg" alt="" srcset="" />
-          Home
-        </span>
+          <span> Home </span>
+        </button>
+      </li>
+      <li (click)="clickBtnMenu($event.target)" title="Minhas Conexões">
+        <button class="btn" [routerLink]="['connections']">
+          <img
+            src="/assets/icons/connections.svg"
+            alt=""
+            srcset=""
+            style="margin-left: 7px"
+          />
+          <span> Minhas conexões </span>
+        </button>
       </li>
       <li>
-        <span
+        <button
           class="btn"
-          (click)="log($event.target)"
-          [routerLink]="['connections']"
+          (click)="clickBtnMenu($event.target)"
+          title="Solicitações enviadas"
         >
-          <img src="/assets/icons/connections.svg" alt="" srcset="" />
-          Minhas conexões
-        </span>
-      </li>
-      <li>
-        <span class="btn" (click)="log($event.target)">
           <img src="/assets/icons/request-sent.svg" alt="" srcset="" />
-          Solicitações enviadas
-        </span>
+          <span>Solicitações enviadas</span>
+        </button>
       </li>
 
       <li>
-        <span class="btn" (click)="log($event.target)">
+        <button
+          class="btn"
+          (click)="clickBtnMenu($event.target)"
+          title="Solicitações recebidas"
+        >
           <img src="/assets/icons/request-received.svg" alt="" srcset="" />
-          Solicitaçoes recebidas
-        </span>
+
+          <span> Solicitaçoes recebidas </span>
+        </button>
       </li>
       <li>
-        <span class="btn" (click)="log($event.target)">
+        <button
+          class="btn"
+          (click)="clickBtnMenu($event.target)"
+          title="Perfis bloqueados"
+        >
           <img src="/assets/icons/profile-blocked.svg" alt="" srcset="" />
-          Perfis bloqueados
-        </span>
+          <span> Perfis bloqueados </span>
+        </button>
       </li>
-      <li [routerLink]="['/','login']">
-        <span class="btn" (click)="log($event.target)">
+      <li [routerLink]="['/', 'login']">
+        <button
+          class="btn"
+          (click)="clickBtnMenu($event.target)"
+          title="Logout"
+        >
           <img src="/assets/icons/logout.svg" alt="" srcset="" />
-          Logout
-        </span>
+          <span> Logout </span>
+        </button>
       </li>
     </ul>
   </div>
