@@ -179,6 +179,16 @@
           <span> Perfis bloqueados </span>
         </button>
       </li>
+      <li>
+        <button
+          class="btn"
+          (click)="clickBtnMenu($event.target)"
+          title="Meu Perfil"
+        >
+          <img src="/assets/icons/profile.png" alt="" srcset=""  width="30px"/>
+          <span> Meu Perfil </span>
+        </button>
+      </li>
       <li [routerLink]="['/', 'login']">
         <button
           class="btn"

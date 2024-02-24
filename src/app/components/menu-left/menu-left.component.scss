@@ -62,9 +62,7 @@ button {
     background-color: #33364e;
   }
 }
-img {
-  margin-right: 1rem;
-}
+
 .menu-expanded {
   width: 13rem;
 }
@@ -76,15 +74,17 @@ button.expanded {
   padding-left: 0.4rem;
 }
 span.expanded {
-  animation: expandSpan 1s;
+  animation: expandSpan .6s ;
   display: block;
+
 
 }
 @keyframes expandSpan {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+
+  100% {
     opacity: 1;
 
   }

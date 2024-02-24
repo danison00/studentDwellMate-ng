@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
@@ -8,6 +8,9 @@
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+h4, h1{
+  color: #26233a;
 }
 body {
   min-height: 100svh;

@@ -4,25 +4,25 @@
       <img [src]="profile.profilePhotoUrl" alt="" />
     </div>
     <div class="name">
-      <h2>{{ profile.name }}</h2>
-      <h3>{{ profile.age }} anos</h3>
+      <h4>{{ profile.name }}</h4>
+      <h5>{{ profile.age }} anos</h5>
     </div>
   </div>
   <div class="info-box">
-    <h4>Acadêmico de {{ profile.course }}</h4>
-    <h4>Em {{ profile.faculty }}</h4>
-    <h4>É de {{ profile.cityOrigin }}</h4>
-    <h4 *ngIf="profile.hasRentedProperty">Já possui imóvel alugado</h4>
-    <h4 *ngIf="!profile.hasRentedProperty">Ainda não possui imóvel alugado</h4>
+    <h5>Acadêmico de {{ profile.course }}</h5>
+    <h5>Em {{ profile.faculty }}</h5>
+    <h5>É de {{ profile.cityOrigin }}</h5>
+    <h5 *ngIf="profile.hasRentedProperty">Já possui imóvel alugado</h5>
+    <h5 *ngIf="!profile.hasRentedProperty">Ainda não possui imóvel alugado</h5>
   </div>
   <div class="footer-box">
     <div>
       <a *ngIf="profile.facebook" [href]="profile.facebook" target="_blank">
-        <img style="width: 40px" src="/assets/icons/facebook.svg" alt="" />
+        <img style="width: 30px" src="/assets/icons/facebook.svg" alt="" />
       </a>
       <a *ngIf="profile.instagram" [href]="profile.instagram" target="_blank">
         <img
-          style="width: 40px"
+          style="width: 30px"
           src="/assets/icons/instagram.svg"
           alt=""
           srcset=""

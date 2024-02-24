@@ -5,14 +5,14 @@
   transition: 0.3s;
 }
 .card {
-  width: 300px;
+  width: 250px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 8px 8px 15px rgba(51, 53, 78, 0.164);
   background-color: #cccedb;
-  border-radius: 20px;
+  border-radius: 8px;
   overflow: hidden;
   border: 1px solid rgb(177, 177, 202);
   cursor: pointer;
@@ -22,13 +22,17 @@
     transform: translateY(-1px) scale(1.004);
   }
 }
+.name {
+  padding: 0 1rem;
+  h4 {
+    font-weight: 600;
+  }
+}
 .info-box,
 .footer-box {
   padding: 0.7rem 1rem;
 }
-.name {
-  padding: 0 1rem;
-}
+
 .img-box {
   width: 100%;
   overflow: hidden;
@@ -47,7 +51,9 @@
   img:hover {
     transform: scale(1.04);
   }
-
+  a {
+  font-size: .8rem;
+  }
   a:hover {
     transform: scale(1.04);
     color: #201569;
@@ -67,8 +73,8 @@
     font-size: 0.9rem;
   }
   .footer-box {
-    a{
-        font-size: .85rem;
+    a {
+      font-size: 0.85rem;
     }
     & div a img {
       transform: scale(0.8);
