@@ -23,9 +23,11 @@
   </div>
   <h1>Todos os perfis</h1>
   <div class="cards">
+  
     <app-card-profile
       *ngFor="let profile of profiles"
       [profile]="profile"
     ></app-card-profile>
   </div>
+  <app-spinner *ngIf="waitingReq" size="big"></app-spinner>
 </section>

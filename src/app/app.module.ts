@@ -19,6 +19,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NgxMaskDirective, provideEnvironmentNgxMask } from 'ngx-mask';
 import { CardProfileComponent } from './components/card-profile/card-profile.component';
+import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { CardProfileComponent } from './components/card-profile/card-profile.com
     SpinnerComponent,
     ModalComponent,
     CardProfileComponent,
+    ProfileDetailsComponent,
   ],
   imports: [
     BrowserModule,

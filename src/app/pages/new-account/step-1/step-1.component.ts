@@ -2,7 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NewAccountComponent } from '../new-account.component';
-import { ProfileService } from 'src/app/service/Profile.service';
+import { NewProfileService } from 'src/app/service/NewProfile.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -24,7 +24,7 @@ export class Step1Component implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private cAcc: NewAccountComponent,
     private router: Router,
-    private profileServ: ProfileService
+    private profileServ: NewProfileService
   ) {}
   ngOnDestroy(): void {
     if (this.usernameExistsSubscription$)

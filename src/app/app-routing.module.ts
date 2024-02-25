@@ -7,6 +7,7 @@ import { NewAccountComponent } from './pages/new-account/new-account.component';
 import { Step1Component } from './pages/new-account/step-1/step-1.component';
 import { Step2Component } from './pages/new-account/step-2/step-2.component';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
+import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
 
 const routes: Routes = [
   {
@@ -14,25 +15,29 @@ const routes: Routes = [
     component: LayoutPageComponent,
     children: [
       {
-        path: 'profiles',
+        path: 'all-profiles',
         component: AllProfilesComponent,
       },
       {
         path: 'connections',
         component: ConnectionsComponent,
       },
-      { path: '**', redirectTo: 'profiles' },
+      {
+        path: 'profile/:id',
+        component: ProfileDetailsComponent,
+      },
+      { path: '**', redirectTo: 'all-profiles' },
     ],
   },
   { path: 'login', component: LoginComponent },
-  
+
   {
     path: 'new-account',
     component: NewAccountComponent,
     children: [
       { path: 'step-1', component: Step1Component },
       { path: 'step-2', component: Step2Component },
-      {path: '**', redirectTo: 'step-1'}
+      { path: '**', redirectTo: 'step-1' },
     ],
   },
   { path: '**', redirectTo: 'home' },

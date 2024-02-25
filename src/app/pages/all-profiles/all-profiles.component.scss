@@ -1,6 +1,9 @@
 * {
   transition: 0.2s;
 }
+.container h1 {
+  margin-bottom: 2rem;
+}
 .profile-menu {
   padding: 1rem 0;
   display: flex;
@@ -45,7 +48,7 @@
       width: 100%;
       padding: 0.4rem 0.7rem;
       border-radius: 5px;
-      font-size: .8rem;
+      font-size: 0.8rem;
 
       &:hover {
         background-color: #c8c8d8;
@@ -67,6 +70,7 @@
   overflow: scroll;
   height: 100vh;
   padding: 0 2rem 3rem 2rem;
+  position: relative;
 }
 .cards {
   display: flex;
@@ -75,12 +79,9 @@
   flex-wrap: wrap;
 }
 
-@media only screen and (max-width: 700px) {
-  .container {
-    margin-left: 3.7rem;
-  }
+@media only screen and (max-width: 915px) {
   .cards {
-    padding: 1rem 5rem;
+    padding: 1rem 0rem;
   }
   .profile-menu {
     h4 {
@@ -98,7 +99,6 @@
 }
 @media only screen and (max-width: 450px) {
   .container {
-    margin-left: 3.7rem;
     padding: 0rem 1.5rem 3rem 1.5rem;
   }
   .cards {

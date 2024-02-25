@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataAccount } from 'src/app/model/DataAccount';
-import { ProfileService } from 'src/app/service/Profile.service';
+import { NewProfileService } from 'src/app/service/NewProfile.service';
 
 @Component({
   selector: 'app-new-account',
@@ -21,7 +21,7 @@ export class NewAccountComponent {
 
   constructor(
     private fb: FormBuilder,
-    private profileServ: ProfileService,
+    private profileServ: NewProfileService,
     private router: Router
   ) {
     this.formNewAccount = this.fb.group({

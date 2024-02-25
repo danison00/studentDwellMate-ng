@@ -1,4 +1,4 @@
-import { ProfileService } from 'src/app/service/Profile.service';
+import { NewProfileService } from 'src/app/service/NewProfile.service';
 import {
   Component,
   EventEmitter,
@@ -26,7 +26,7 @@ export class Step2Component implements OnInit {
   constructor(
     protected cAcc: NewAccountComponent,
     private router: Router,
-    private profileServ: ProfileService
+    private profileServ: NewProfileService
   ) {}
 
   ngOnInit(): void {

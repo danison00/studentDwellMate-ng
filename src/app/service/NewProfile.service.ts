@@ -6,7 +6,7 @@ import { catchError, map, of } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class ProfileService {
+export class NewProfileService {
   constructor(private http: HttpClient) {}
 
   public newProfile(dataAccount: DataAccount) {
