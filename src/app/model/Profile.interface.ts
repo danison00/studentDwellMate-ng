@@ -1,3 +1,4 @@
+import { Property } from './Property';
 export interface Profile{
         id: number | null; // Adjusted type to allow null for ID
         name: string;
@@ -9,6 +10,7 @@ export interface Profile{
         profilePhotoUrl: string;
         hasRentedProperty: boolean;
         cityOrigin: string;
-        wantsToSharedProperty: boolean;      
+        wantsToSharedProperty: boolean;    
+        property?: Property;  
       
 }

@@ -4,78 +4,14 @@
 .container h1 {
   margin-bottom: 2rem;
 }
-.profile-menu {
-  padding: 1rem 0;
-  display: flex;
-  justify-content: flex-end;
 
-  .box-img {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    position: relative;
-    &:hover .drop-down {
-      display: block;
-    }
-  }
-  h4 {
-    font-weight: 500;
-  }
-  img {
-    width: 50px;
-    border-radius: 50%;
-  }
-
-  .drop-down {
-    display: none;
-    width: max-content;
-    background-color: #d9d9e4;
-    position: absolute;
-    top: 92%;
-    border: 1px solid #ccccdf;
-    padding: 0.4rem 0.3rem;
-    border-radius: 5px;
-    animation: drop-down-animation 0.6s;
-    li {
-      list-style: none;
-    }
-
-    a {
-      text-decoration: none;
-      display: inline-block;
-      width: 100%;
-      padding: 0.4rem 0.7rem;
-      border-radius: 5px;
-      font-size: 0.8rem;
-
-      &:hover {
-        background-color: #c8c8d8;
-      }
-    }
-  }
-}
-@keyframes drop-down-animation {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
 .container {
-  overflow: scroll;
-  height: 100vh;
-  padding: 0 2rem 3rem 2rem;
   position: relative;
 }
 .cards {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 

@@ -1,6 +1,4 @@
-:host{
-  width: 100%;
-}
+
 button {
   position: relative;
   width: 100%;
@@ -29,7 +27,7 @@ button[bg-color="dark-blue"] {
   }
 }
 button[bg-color="green"] {
-  background-color: #7AEFB0;
+  background-color: #7aefb0;
   color: #216127;
   border: 2px solid #70e2a5;
   &:hover {
@@ -43,4 +41,16 @@ button[bg-color="white"] {
   &:hover {
     background-color: #c8ccf0;
   }
+}
+button[bg-color="red"] {
+  color: #D12818;
+  background-color: #ebc4c4;
+  border: 2px solid #ebbaba;
+  &:hover {
+    background-color: #ebbaba;
+  }
+}
+
+button[size = 'full']{
+  width: 100%;
 }

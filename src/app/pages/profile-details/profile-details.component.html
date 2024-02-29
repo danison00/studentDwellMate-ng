@@ -1,6 +1,52 @@
-
 <section *ngIf="!waitingReq">
+  <div class="box-profile-img">
+    <div class="img">
+      <img [src]="profile.profilePhotoUrl" alt="" />
+    </div>
+    <h3>{{ nameFormated }}, {{ profile.age }} anos</h3>
+    <div class="box-profile-info">
+      <a><img src="/assets/icons/facebook.svg" alt="" /> {{ nameFormated }}</a>
+      <a><img src="/assets/icons/instagram.svg" alt="" /> {{ nameFormated }}</a>
+    </div>
+    <div class="box-btn">
+      <app-button size="full" text="Solicitar conexão"></app-button>
+      <app-button bg_color="red" text="Bloquear"></app-button>
+    </div>
+  </div>
 
-
-    <app-spinner *ngIf="true" size="big"></app-spinner>
+  <div class="box-left">
+    <ul>
+      <li>
+        <img style="margin-left:2px;" src="/assets/icons/course.svg" alt="" />
+        <span>Estuda {{ profile.course }}</span>
+      </li>
+      <li>
+        <img  style="margin-left:2px;" src="/assets/icons/faculty.svg" alt="" srcset="" /><span>{{
+          profile.faculty
+        }}</span>
+      </li>
+      <li>
+        <img style="margin-left: 4px;" src="/assets/icons/local.svg" alt="" /><span style="margin-left: 4px;">De {{ profile.cityOrigin }}</span>
+      </li>
+      <li *ngIf="profile.property">
+        <img src="/assets/icons/ok.svg" alt="" />
+        <span>Já possui imóvel alugado!</span>
+      </li>
+      <li *ngIf="!profile.property">
+        <img
+          style="width: 25px; fill: #41415a !important"
+          src="/assets/icons/not.svg"
+          alt=""
+        />
+        <span> Ainda não possui imóvel alugado!</span>
+      </li>
+      <li *ngIf="profile.property">
+        <img src="/assets/icons/neighborhood.svg" /><span
+          >{{ profile.property.neighborhood }},
+          {{ profile.property.city }}</span
+        >
+      </li>
+    </ul>
+  </div>
 </section>
+<app-spinner *ngIf="false" size="big"></app-spinner>

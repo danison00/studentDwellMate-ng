@@ -9,12 +9,12 @@ export class ButtonComponent {
 
   @Input() text = "Button";
   @Input() clickLoad = false;
-  @Input() bg_color: "dark-blue" | "ligth-blue" | "green" | "white" = "ligth-blue";
-
+  @Input() bg_color: "dark-blue" | "ligth-blue" | "green" | "white" | "red" = "ligth-blue";
+  @Input() size: 'full' = 'full';
   @Input() load = false;
 
-  onLoad(){
-    if(!this.clickLoad) return;
+  onLoad() {
+    if (!this.clickLoad) return;
     this.load = true;
   }
 }

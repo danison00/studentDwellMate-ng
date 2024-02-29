@@ -20,6 +20,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { NgxMaskDirective, provideEnvironmentNgxMask } from 'ngx-mask';
 import { CardProfileComponent } from './components/card-profile/card-profile.component';
 import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
+import { ProfileIconComponent } from './components/profile-icon/profile-icon.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { ProfileDetailsComponent } from './pages/profile-details/profile-details
     ModalComponent,
     CardProfileComponent,
     ProfileDetailsComponent,
+    ProfileIconComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,7 @@ export interface DataAccount{
     profilePhotoUrl: string;
     hasRentedProperty: boolean;
     cityOrigin: string;
+    cityCurrent?: string;
     wantsToSharedProperty: boolean;
     property?: Property
 

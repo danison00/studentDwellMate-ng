@@ -1,3 +1,4 @@
+import { Property } from './../model/Property';
 import { Injectable } from '@angular/core';
 import { Profile } from '../model/Profile.interface';
 import { ProfileDetailsComponent } from '../pages/profile-details/profile-details.component';
@@ -35,6 +36,17 @@ export class MyProfileServiceService {
       profilePhotoUrl:
         'https://uploads.metropoles.com/wp-content/uploads/2023/07/17124030/F1K-cdbXwAgovdo-1.jpg',
       wantsToSharedProperty: false,
+      property: {
+        city: "Tucuruí",
+        state: "Pará",
+        street: "Rua fortaleza",
+        neighborhood: "Bela Vista",
+        additionalDetails: "Rua ao lado da Radio energia",
+        houseNumber: "14",
+        postalCode: "4000-9766",
+        propertyPhoto: []
+
+      }
     },
     {
       age: 23,
