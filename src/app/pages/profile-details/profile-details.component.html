@@ -9,8 +9,9 @@
       <a><img src="/assets/icons/instagram.svg" alt="" /> {{ nameFormated }}</a>
     </div>
     <div class="box-btn">
-      <app-button size="full" text="Solicitar conexão"></app-button>
-      <app-button bg_color="red" text="Bloquear"></app-button>
+      <app-button size="full" text="Solicitar conexão"/>
+      <app-button bg_color="red" text="Bloquear"/>
+      <app-button *ngIf="profile.property" text="Ver fotos do imóvel" bg_color="green"/>
     </div>
   </div>
 
